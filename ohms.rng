@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar ns="" xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+  <start>
+    <element name="ROOT">
+      <element name="record">
+        <attribute name="dt">
+          <data type="date"/>
+        </attribute>
+        <attribute name="id">
+          <data type="integer"/>
+        </attribute>
+        <element name="version">
+          <data type="integer"/>
+        </element>
+        <element name="date">
+          <attribute name="format">
+            <data type="NCName"/>
+          </attribute>
+          <data type="NMTOKEN"/>
+        </element>
+        <element name="date_nonpreferred_format">
+          <empty/>
+        </element>
+        <element name="cms_record_id">
+          <empty/>
+        </element>
+        <ref name="title"/>
+        <element name="accession">
+          <text/>
+        </element>
+        <element name="duration">
+          <text/>
+        </element>
+        <element name="collection_id">
+          <text/>
+        </element>
+        <element name="collection_name">
+          <text/>
+        </element>
+        <element name="series_id">
+          <text/>
+        </element>
+        <element name="series_name">
+          <text/>
+        </element>
+        <element name="repository">
+          <text/>
+        </element>
+        <element name="funding">
+          <empty/>
+        </element>
+        <element name="repository_url">
+          <empty/>
+        </element>
+        <zeroOrMore>
+          <element name="subject">
+            <text/>
+          </element>
+        </zeroOrMore>
+        <zeroOrMore>
+          <element name="keyword">
+            <text/>
+          </element>
+        </zeroOrMore>
+        <element name="interviewee">
+          <text/>
+        </element>
+        <element name="interviewer">
+          <text/>
+        </element>
+        <optional>
+          <element name="format">
+            <data type="NCName"/>
+          </element>
+        </optional>
+        <element name="file_name">
+          <text/>
+        </element>
+        <element name="sync">
+          <text/>
+        </element>
+        <element name="sync_alt">
+          <empty/>
+        </element>
+        <element name="transcript_alt_lang">
+          <empty/>
+        </element>
+        <oneOrMore>
+          <choice>
+            <element name="collection_link">
+              <data type="anyURI"/>
+            </element>
+            <element name="description">
+              <text/>
+            </element>
+            <element name="fmt">
+              <data type="NCName"/>
+            </element>
+            <element name="index">
+              <oneOrMore>
+                <element name="point">
+                  <element name="time">
+                    <data type="integer"/>
+                  </element>
+                  <ref name="title"/>
+                  <optional>
+                    <element name="title_alt">
+                      <empty/>
+                    </element>
+                  </optional>
+                  <element name="partial_transcript">
+                    <text/>
+                  </element>
+                  <optional>
+                    <element name="partial_transcript_alt">
+                      <empty/>
+                    </element>
+                  </optional>
+                  <element name="synopsis">
+                    <text/>
+                  </element>
+                  <optional>
+                    <element name="synopsis_alt">
+                      <empty/>
+                    </element>
+                  </optional>
+                  <element name="keywords">
+                    <text/>
+                  </element>
+                  <optional>
+                    <element name="keywords_alt">
+                      <empty/>
+                    </element>
+                  </optional>
+                  <element name="subjects">
+                    <text/>
+                  </element>
+                  <optional>
+                    <element name="subjects_alt">
+                      <empty/>
+                    </element>
+                  </optional>
+                  <element name="gps">
+                    <text/>
+                  </element>
+                  <element name="gps_zoom">
+                    <text/>
+                  </element>
+                  <element name="gps_text">
+                    <text/>
+                  </element>
+                  <optional>
+                    <element name="gps_text_alt">
+                      <empty/>
+                    </element>
+                  </optional>
+                  <element name="hyperlink">
+                    <data type="anyURI"/>
+                  </element>
+                  <element name="hyperlink_text">
+                    <text/>
+                  </element>
+                  <optional>
+                    <element name="hyperlink_text_alt">
+                      <empty/>
+                    </element>
+                  </optional>
+                </element>
+              </oneOrMore>
+            </element>
+            <element name="index_alt">
+              <empty/>
+            </element>
+            <element name="kembed">
+              <text/>
+            </element>
+            <element name="language">
+              <text/>
+            </element>
+            <element name="media_id">
+              <empty/>
+            </element>
+            <element name="media_url">
+              <data type="anyURI"/>
+            </element>
+            <element name="mediafile">
+              <element name="host">
+                <data type="NCName"/>
+              </element>
+              <element name="host_account_id">
+                <text/>
+              </element>
+              <element name="host_player_id">
+                <text/>
+              </element>
+              <element name="host_clip_id">
+                <text/>
+              </element>
+              <element name="clip_format">
+                <data type="NCName"/>
+              </element>
+            </element>
+            <element name="rel">
+              <empty/>
+            </element>
+            <element name="rights">
+              <text/>
+            </element>
+            <element name="series_link">
+              <data type="anyURI"/>
+            </element>
+            <element name="transcript">
+              <text/>
+            </element>
+            <element name="transcript_alt">
+              <empty/>
+            </element>
+            <element name="translate">
+              <data type="integer"/>
+            </element>
+            <element name="type">
+              <text/>
+            </element>
+            <element name="usage">
+              <text/>
+            </element>
+            <element name="userestrict">
+              <data type="integer"/>
+            </element>
+            <element name="xmlfilename">
+              <data type="NCName"/>
+            </element>
+            <element name="xmllocation">
+              <data type="anyURI"/>
+            </element>
+          </choice>
+        </oneOrMore>
+      </element>
+    </element>
+  </start>
+  <define name="title">
+    <element name="title">
+      <text/>
+    </element>
+  </define>
+</grammar>
